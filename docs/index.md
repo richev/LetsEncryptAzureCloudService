@@ -1,5 +1,3 @@
-# Preamble
-
 This document aims to explain how to use [ZeroSSL](https://zerossl.com/) to obtain and set up a free SSL certificate from [Let's Encrypt](https://letsencrypt.org/) for use with a website hosted on a [Microsoft Azure](https://azure.microsoft.com) [Cloud Service (classic)](https://azure.microsoft.com/en-gb/services/cloud-services/).
 
 This may be useful to you if:
