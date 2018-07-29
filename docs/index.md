@@ -194,7 +194,7 @@ We're going to use [ZeroSSL](https://zerossl.com/), which will take us through t
 
 ## 1. Details
 
-Point your browser to https://zerossl.com/free-ssl/#crt and fill in your details
+Point your browser to [https://zerossl.com/free-ssl/#crt](https://zerossl.com/free-ssl/#crt) and fill in your details
 
 ### Email
 This is optional, but you can set it to receive certificate expiration reminder emails.
@@ -279,7 +279,7 @@ We need to do three things with this certificate (`has-private-key.pfx`)
 
 ## 1. Microsoft Azure Portal
 
-Starting at https://portal.azure.com
+Starting at [https://portal.azure.com](https://portal.azure.com)
 
 * Select _Cloud Services (classic)_
 * Select your Cloud Service
@@ -339,7 +339,7 @@ Publish your website(s) again, and you should now be able to navigate to them us
 
 # Next Time
 
-At https://zerossl.com/free-ssl/#crt, start off by pasting the _Account Key_ (`account-key.txt`) into the left-hand input field, and the  _Certificate Request_ file (`domain-csr.txt`) into the right-hand input field. Then continue as before.
+At [https://zerossl.com/free-ssl/#crt](https://zerossl.com/free-ssl/#crt), start off by pasting the _Account Key_ (`account-key.txt`) into the left-hand input field, and the  _Certificate Request_ file (`domain-csr.txt`) into the right-hand input field. Then continue as before.
 
 # Troubleshooting
 
