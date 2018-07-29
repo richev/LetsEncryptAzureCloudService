@@ -1,4 +1,4 @@
-This document aims to explain how to use [ZeroSSL](https://zerossl.com/) to obtain and set up a free SSL certificate from [Let's Encrypt](https://letsencrypt.org/) for use with a website hosted on a [Microsoft Azure](https://azure.microsoft.com) [Cloud Service (classic)](https://azure.microsoft.com/en-gb/services/cloud-services/).
+This document aims to explain how to use [ZeroSSL](https://zerossl.com/) to obtain and set up a free [Let's Encrypt](https://letsencrypt.org/) SSL certificate for use with a website hosted on a [Microsoft Azure](https://azure.microsoft.com) [Cloud Service (classic)](https://azure.microsoft.com/en-gb/services/cloud-services/).
 
 This may be useful to you if:
 
@@ -190,7 +190,7 @@ Windows installers for OpenSSL are maintained by [Shining Light Productions](htt
 
 We're going to use [ZeroSSL](https://zerossl.com/), which will take us through three steps.
 
-### Details :arrow_forward: Verification :arrow_forward: Certificate
+### Details → Verification → Certificate
 
 ## 1. Details
 
