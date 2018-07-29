@@ -345,3 +345,6 @@ At https://zerossl.com/free-ssl/#crt, start off by pasting the _Account Key_ (`a
 
 ## HTTP 503 error
 If you get an HTTP 503 error page when navigating to your website using HTTPS this may be because the HTTPS endpoint binding isn't set up correctly in your `ServiceDefinition.csdef`.
+
+---
+Written by [Richard](http://richardeverett.com) in 2018
