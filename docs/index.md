@@ -287,7 +287,7 @@ Starting at [https://portal.azure.com](https://portal.azure.com)
 
 You will then be prompted to upload a certificate, so upload the one containing the private key (`has-private-key.pfx`) and when prompted enter the export password you used previously.
 
-> :thought_balloon: Once the certificate has uploaded, note down the _thumbprint_, as you'll need this in step 3.
+> :thought_balloon: Once the certificate has uploaded, note down the _thumbprint_, as you'll need this in [step 3](#3-azure-cloud-service-configuration).
 
 ## 2. Windows Certificate Store
 
@@ -295,7 +295,7 @@ The certificate needs to be added to your PC's Windows Certificate Store, so tha
 
 ## 3. Azure Cloud Service Configuration
 
-In Visual Studio, right-click your Cloud Service configuration, and add your certificate as illustrated below, using the thumbprint you noted down in step 1.
+In Visual Studio, right-click your Cloud Service configuration, and add your certificate as illustrated below, using the thumbprint you noted down in [step 1](#1-microsoft-azure-portal).
 
 ![Cloud Service - Certificates](img/CloudService-Certificates.png)
 
