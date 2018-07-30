@@ -35,7 +35,7 @@ Let's Encrypt grants SSL certificates only for domains that we control. This is 
 
 Verification is done via the [ACME Protocol](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment). For lots more information, see [How It Works](https://letsencrypt.org/how-it-works/).
 
-During the Verification process, Let's Encrypt will visit a URL of the form
+All we need to know is that during the Verification process, Let's Encrypt will visit a URL of the form
 
 ```
 http://mydomain.com/.well-known/acme-challenge/<challenge>
@@ -43,7 +43,7 @@ http://mydomain.com/.well-known/acme-challenge/<challenge>
 
 on our website(s), at which they expect to see a specific `response`. The `<challenge>` value is unique for each domain (and subdomain), and changes each time we go through Verification.
 
-> The `<challenge>` and `response` values for our domain(s) will be given to us later on in the process
+> The `<challenge>` and `response` values for our domain(s) will be given to us [later on](#2-verification)
 
 To support this, we can add a controller that contains two endpoints:
 *  A `GET` endpoint (with suitable routing) that will respond to `.well-known/acme-challenge/<challenge>` requests
@@ -148,13 +148,13 @@ public class RouteConfig
 }
 ```
 
-> :thought_balloon: After adding this controller to your website, be sure to redeploy and test that the endpoints are working by POSTing a dummy `<challenge>` and `response` and seeing that you can GET them. You can perform the POST using a tool such as [Postman](https://www.getpostman.com/), or using a PowerShell script like the one listed later on in this document.
+> :thought_balloon: After adding this controller to your website, be sure to redeploy and test that the endpoints are working by POSTing a dummy `<challenge>` and `response` and seeing that you can GET them. You can perform the POST using a tool such as [Postman](https://www.getpostman.com/), or using a PowerShell script like the one listed [later on](#2-verification).
 
 ## Website Setup - Bonus Step - Forcing HTTPS
 
 Configuring an SSL certificate for HTTPS is great, but of limited benefit if your existing users continue to arrive at your website(s) using HTTP. So, it seems appropriate to redirect any requests that use HTTP over to HTTPS.
 
-There are [various ways](https://stackoverflow.com/questions/4945883/how-to-redirect-http-to-https-in-mvc-application-iis7-5) to achieve this in ASP.NET MVC, but I chose to create an attribute that inherits from  [`RequiresHttpsAttribute`](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute(v=vs.118).aspx), that redirects _unless_ the host is `localhost`. Simple to use, and doesn't get in the way when testing on locally.
+There are [various ways](https://stackoverflow.com/questions/4945883/how-to-redirect-http-to-https-in-mvc-application-iis7-5) to achieve this in ASP.NET MVC, but I chose to create an attribute that inherits from  [`RequiresHttpsAttribute`](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute(v=vs.118).aspx), that redirects _unless_ the host is `localhost`. Simple to use, and doesn't get in the way when testing locally.
 
 ```csharp
 using System.Web.Mvc;
@@ -174,7 +174,7 @@ namespace Richev.Common.Web.Attributes
 }
 ```
 
-Add this attribute to all of the controllers where you want to enforce HTTPS
+Add this attribute to all of the controllers where you want to enforce HTTPS.
 
 ## PC Setup - OpenSSL
 
@@ -188,7 +188,7 @@ Windows installers for OpenSSL are maintained by [Shining Light Productions](htt
 
 # Obtaining the SSL Certificate and Private Key
 
-We're going to use [ZeroSSL](https://zerossl.com/), which will take us through three steps.
+Now we use [ZeroSSL](https://zerossl.com/), which will take us through three steps.
 
 ### Details → Verification → Certificate
 
@@ -244,7 +244,7 @@ foreach ($challengeResponse in $challengeResponses)
 }
 ```
 
-One this is done, hit **Next** and wait a few seconds for ZeroSSL and Let's Encrypt to verify your domain(s).
+One this is done, hit _Next_ and wait a few seconds for ZeroSSL and Let's Encrypt to verify your domain(s).
 
 ## 3. Certificate
 
@@ -271,9 +271,9 @@ openssl pkcs12 -export -in domain-crt.txt -inkey domain-key.txt -out has-private
 # Using the Certificate
 We need to do three things with this certificate (`has-private-key.pfx`)
 
-1. Upload it to the Microsoft Azure Portal
-2. Add it to the Windows Certificate Store
-3. Refer to it in our Azure Cloud Service configuration
+1. Upload it to the [Microsoft Azure Portal](#1-microsoft-azure-portal)
+2. Add it to the [Windows Certificate Store](#2-windows-certificate-store)
+3. Refer to it in our [Azure Cloud Service configuration](#3-azure-cloud-service-configuration)
 
 > There may well be different/better ways of doing this, in particular step 2...
 
@@ -293,7 +293,7 @@ You will then be prompted to upload a certificate, so upload the one containing 
 
 The certificate needs to be added to your PC's Windows Certificate Store, so that Visual Studio can reference it. This is explained in a series of detailed steps over at [Technet](https://technet.microsoft.com/en-au/library/cc995171.aspx).
 
-## 3. Azure Cloud Service
+## 3. Azure Cloud Service Configuration
 
 In Visual Studio, right-click your Cloud Service configuration, and add your certificate as illustrated below, using the thumbprint you noted down in step 1.
 
@@ -331,7 +331,7 @@ In your `ServiceDefinition.csdef` file, add HTTPS endpoints for all of the domai
 
 # Finally
 
-Publish your website(s) again, and you should now be able to navigate to them using HTTPS.
+Publish your website(s), and you should now be able to navigate to them using HTTPS.
 
 :tada: You should see a green padlock icon and (in Google Chrome) the reassuring word 'Secure'.
 
