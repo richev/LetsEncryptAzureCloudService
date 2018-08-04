@@ -1,0 +1,24 @@
+sidebar-sample:
+  - title: "Pre-requisite Steps"
+    children:
+      - title: Website Setup - ACME Protocol
+        url: #website-setup---acme-protocol
+
+      - title: Website Setup - Bonus Step - Forcing HTTPS
+        url: #website-setup---bonus-step---forcing-https
+
+      - title: PC Setup - OpenSSL
+        url: #pc-setup---openssl
+
+  - title: "Parent Page B"
+    children:
+      - title: "Child Page B1"
+        url: /
+      - title: "Child Page B2"
+        url: /
+      - title: "Child Page B3"
+        url: /
+      - title: "Child Page B4"
+        url: /
+      - title: "Child Page B5"
+        url: /

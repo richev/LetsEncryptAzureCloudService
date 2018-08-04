@@ -1,14 +1,9 @@
 plugins:
   - jemoji
+
+sidebar:
+  title: "Sidebar Title"
+  nav: sidebar-sample
+
 title: Let's Encrypt - Azure Cloud Service
-docs:
-
-- title: Pre-requisite Steps
-  url: #website-setup---acme-protocol
-
-- title: Website Setup - Bonus Step - Forcing HTTPS
-  url: #website-setup---bonus-step---forcing-https
-
-- title: PC Setup - OpenSSL
-  url: #pc-setup---openssl
 theme: jekyll-theme-minimal
