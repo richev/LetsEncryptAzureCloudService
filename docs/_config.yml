@@ -11,3 +11,4 @@ docs:
 
 - title: PC Setup - OpenSSL
   url: #pc-setup---openssl
+theme: jekyll-theme-minimal
