@@ -6,4 +6,4 @@ sidebar:
   nav: sidebar-sample
 
 title: Let's Encrypt - Azure Cloud Service
-theme: jekyll-theme-minimal
+theme: minimal-mistakes-jekyll
