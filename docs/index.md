@@ -331,11 +331,7 @@ In your `ServiceDefinition.csdef` file, add HTTPS endpoints for all of the domai
 
 # Finally
 
-Publish your website(s), and you should now be able to navigate to them using HTTPS.
-
-:tada: You should see a green padlock icon and (in Google Chrome) the reassuring word 'Secure'.
-
-![Green padlock shown in Google Chrome](img/Secure.png)
+Publish your website(s), and you should now be able to navigate to them using HTTPS. :tada:
 
 # Next Time
 
